@@ -1,1 +1,5 @@
-<p>navigation-bar works!</p>
+<nav class="navigation-bar">
+    @for (item of navItems(); track item.id) {
+        <button (click)="item.link">{{item.label}}</button>
+    }
+</nav>

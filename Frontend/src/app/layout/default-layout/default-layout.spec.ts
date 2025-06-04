@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FooterButton } from './footer-button';
+import { DefaultLayout } from './default-layout';
 
-describe('FooterButton', () => {
-  let component: FooterButton;
-  let fixture: ComponentFixture<FooterButton>;
+describe('DefaultLayout', () => {
+  let component: DefaultLayout;
+  let fixture: ComponentFixture<DefaultLayout>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FooterButton]
+      imports: [DefaultLayout]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(FooterButton);
+    fixture = TestBed.createComponent(DefaultLayout);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

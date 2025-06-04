@@ -1,12 +1,13 @@
 import { Component, input, signal } from '@angular/core';
-import { HeaderButton } from '../buttons/header-button/header-button';
+import { Button } from '../button/button';
+import { SearchBar } from '../search-bar/search-bar';
 
 @Component({
   selector: 'app-header',
-  imports: [HeaderButton],
+  imports: [Button, SearchBar],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
-  nameButton = input('Botão')
+  buttonName = input('Default')
 }

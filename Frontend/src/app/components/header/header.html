@@ -1,9 +1,12 @@
 <header class="header">
-    <div class="header__left">
-        <img src="../../../../public/favicon.ico" alt="Logo" class="logo" />
+    <div class="header_title">
+        <img href="../../../../public/favicon.ico" class="logo" />
         <span class="title">
             <span class="grbl">GRBL</span><span class="brasil">BRASIL</span>
         </span>
     </div>
-    <app-header-button [nameButton] = "nameButton()"/>
+    <app-search-bar (search)="$event"></app-search-bar>
+    <div class="header_button">
+        <app-button [buttonName]="buttonName()"/>
+    </div>
 </header>

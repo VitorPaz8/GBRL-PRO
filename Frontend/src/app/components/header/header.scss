@@ -4,10 +4,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   border-bottom: 2px solid #ffd700;
 
-  &__left {
+  &_title {
     display: flex;
     align-items: center;
     .logo {
@@ -15,6 +17,7 @@
       height: 50px;
     }
     .title {
+      margin-left: 1%;
       font-size: 1.8rem;
       font-weight: bold;
       .grbl {
