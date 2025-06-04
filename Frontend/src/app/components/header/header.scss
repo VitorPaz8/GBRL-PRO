@@ -1,0 +1,28 @@
+.header {
+  height: 70px;
+  background-color: #000080;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  border-bottom: 2px solid #ffd700;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      .grbl {
+        color: white;
+      }
+      .brasil {
+        color: #ffd700;
+      }
+    }
+  }
+}
