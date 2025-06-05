@@ -1,31 +1,89 @@
 .header {
-  height: 70px;
+  width: 100%;
   background-color: #000080;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  flex-wrap: wrap;
+  padding: 50px 5%;
   border-bottom: 2px solid #ffd700;
 
   &_title {
     display: flex;
     align-items: center;
+
     .logo {
       width: 50px;
       height: 50px;
     }
+
     .title {
-      margin-left: 1%;
+      margin-left: 8px;
       font-size: 1.8rem;
       font-weight: bold;
+
       .grbl {
         color: white;
       }
+
       .brasil {
         color: #ffd700;
       }
+    }
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    input {
+      padding: 5px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    button {
+      background-color: #003366;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    &_title {
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .search-bar {
+      margin-top: 8px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .menu {
+      justify-content: center;
+      margin-top: 8px;
     }
   }
 }

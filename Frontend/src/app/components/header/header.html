@@ -5,8 +5,15 @@
             <span class="grbl">GRBL</span><span class="brasil">BRASIL</span>
         </span>
     </div>
-    <app-search-bar (search)="$event"></app-search-bar>
-    <div class="header_button">
-        <app-button [buttonName]="buttonName()"/>
-    </div>
+    <app-search-bar (search)="$event"/>
+    <app-button [buttonName]="'Login'"/>
 </header>
+<app-navigation-bar
+    [navItems]="[
+        { id: 1 , label: 'Sobre', link: '/sobre' },
+        { id: 2 , label: 'Eletronicos', link: '/app-products' },
+        { id: 3 , label: 'Máquinas', link: '/app-products' },
+        { id: 4 , label: 'Acessórios', link: '/app-products' },
+        { id: 5 , label: 'Contato', link: '/contato' }
+    ]"
+/>

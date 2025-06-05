@@ -1,11 +1,5 @@
 import { Component, input } from '@angular/core';
 
-export interface NavItemDTO {
-  id: number;
-  label: string;
-  link: string;
-}
-
 @Component({
   selector: 'app-navigation-bar',
   imports: [],
