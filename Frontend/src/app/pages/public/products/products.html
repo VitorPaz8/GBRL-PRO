@@ -1,0 +1,15 @@
+<div class="grid">
+    <div class="product-grid">
+        @for (item of productsToDisplay; track item.id) {
+            <div class="product">
+                <h3>{{item.name}}</h3>
+                <li>{{item.image}}</li>
+                <li>{{item.description}}</li>
+                <div>
+                    <li>{{item.price}}</li>
+                    <li>{{item.quantityAvailable}}</li>
+                </div>
+            </div>
+        }
+    </div>
+</div>
