@@ -1,8 +1,3 @@
-// Cores principais
-$background-color: #000080; // Azul escuro
-$text-color: #ffffff;       // Branco
-$hover-background: #000058; // Dourado no hover
-
 .navigation-bar {
   width: 100%;
   background-color: #000080;
@@ -13,20 +8,19 @@ $hover-background: #000058; // Dourado no hover
   button {
     padding: 0.6rem 1.2rem;
     color: $text-color;
-    background-color: $background-color;
+    background-color: #000080;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
     border: 0px;
 
     &:hover {
-      background-color: $hover-background;
-      color: $text-color;
+      background-color: #000058;
+      color: #ffffff;
     }
 }
 }
 
-/* Responsivo */
 @media (max-width: 768px) {
   .navigation-bar {
     flex-wrap: wrap;
