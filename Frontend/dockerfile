@@ -17,8 +17,7 @@ RUN npm install -g @angular/cli
 COPY . .
 
 # Build da aplicação para produção
-RUN npm run build:ssr
-RUN npm run prerender
+RUN npm run build
 
 # Stage 2: Production
 FROM node:20-alpine AS production
