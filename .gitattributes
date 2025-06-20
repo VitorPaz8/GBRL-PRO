@@ -7,42 +7,23 @@
 # Arquivos Windows batch usam CRLF
 *.bat text eol=crlf
 
-# Arquivos de código-fonte Java e Typescript são texto
+# Arquivos texto (Linguaguem de programação, Linguagem de marcação, styles, etc)
 *.java text
 *.ts text
-*.tsx text
 *.js text
-*.jsx text
-
-# XML e JSON texto
 *.xml text
 *.json text
-
-# Arquivos HTML e CSS são texto
 *.html text
-*.css text
-
-# Arquivos markdown e documentação são texto
+*.scss text
 *.md text
 *.txt text
 
-# Arquivos binários (imagens, fontes, vídeos)
+# Arquivos binários (atualizar caso coloque outro tipo de arquivo binario)
 *.png binary
 *.jpg binary
-*.jpeg binary
-*.gif binary
 *.ico binary
-*.bmp binary
-*.tiff binary
-*.woff binary
-*.woff2 binary
-*.eot binary
-*.ttf binary
-*.otf binary
-*.mov binary
-*.avi binary
 
-# Arquivos de configuração binários ou gerados
+# Arquivos de configuração gerados
 *.jar binary
 *.class binary
 
