@@ -1,0 +1,9 @@
+# Ignorar node_modules e arquivos pesados
+node_modules
+.git
+.gitignore
+*.md
+Dockerfile*
+.vscode
+.eslintrc*
+.env

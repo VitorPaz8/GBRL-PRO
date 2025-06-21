@@ -1,0 +1,34 @@
+# Normaliza finais de linha para a maioria dos arquivos texto
+* text=auto
+
+# Scripts shell usam LF (Unix style)
+*.sh text eol=lf
+
+# Arquivos Windows batch usam CRLF
+*.bat text eol=crlf
+
+# Arquivos texto (Linguaguem de programação, Linguagem de marcação, styles, etc)
+*.java text
+*.ts text
+*.js text
+*.xml text
+*.json text
+*.html text
+*.scss text
+*.md text
+*.txt text
+
+# Arquivos binários (atualizar caso coloque outro tipo de arquivo binario)
+*.png binary
+*.jpg binary
+*.ico binary
+
+# Arquivos de configuração gerados
+*.jar binary
+*.class binary
+
+# Evita mesclagem automática em arquivos de lock, binários e gerados
+package-lock.json merge=union
+yarn.lock merge=union
+*.lock merge=union
+*.bin binary

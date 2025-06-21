@@ -1,0 +1,70 @@
+# FRONTEND - Angular
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/.env
+frontend/.output/
+
+# BACKEND - Spring Boot
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/*.iml
+backend/.env
+
+
+# AUTH SERVICE - Spring Boot
+auth-service/target/
+auth-service/.classpath
+auth-service/.project
+auth-service/.settings/
+auth-service/*.iml
+auth-service/.env
+
+# GATEWAY - Node.js
+gateway/node_modules/
+gateway/dist/
+gateway/.env
+
+# COMUM
+*.log
+*.tmp
+*.swp
+*.bak
+*.pid
+*.seed
+*.seed.js
+
+# IDEs e editores
+/**/.vscode/
+/**/.idea/
+*.iml
+/**/nbproject/private/
+/**/nbbuild/
+/**/dist/
+/**/nbdist/
+/**/.nb-gradle/
+/**/build/
+/**/HELP.md
+/**/target/
+/**/.mvn/wrapper/maven-wrapper.jar
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Exceções
+/**/**/src/main/**/build/
+/**/**/src/test/**/build/
+/**/**/src/main/**/target/
+/**/**/src/test/**/target/
+
+# Spring Tool Suite (STS)
+/**/.apt_generated
+/**/.classpath
+/**/.factorypath
+/**/.project
+/**/.settings
+/**/.springBeans
+/**/.sts4-cache
