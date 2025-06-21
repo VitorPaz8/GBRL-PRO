@@ -1,14 +1,16 @@
-import { Component, input, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { Button } from '../button/button';
 import { SearchBar } from '../search-bar/search-bar';
-import { NavigationBar } from './component/navigation-bar/navigation-bar';
 
 @Component({
   selector: 'app-header',
-  imports: [Button, SearchBar, NavigationBar],
+  imports: [Button, SearchBar],
   templateUrl: './header.html',
   styleUrl: './header.scss'
 })
 export class Header {
-  
+  onSearch(searchTerm: string) {
+    // Lógica para lidar com a busca
+    console.log('Termo pesquisado:', searchTerm);
+  }
 }

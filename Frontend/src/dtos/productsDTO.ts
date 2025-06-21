@@ -1,13 +1,8 @@
 // foto, nome, preço, descrição e quantidade em estoque.
-
-export interface productDTO{
+export interface ProductDTO{
     image: String[] | String;
     name: String;
     price: Number;
     description: String;
     quantityAvailable: Number;
-}
-
-export interface productsDTO{
-    products: productDTO[];
 }

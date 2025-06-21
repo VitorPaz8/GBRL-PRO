@@ -1,19 +1,7 @@
 <header class="header">
     <div class="header_title">
-        <img href="../../../../public/favicon.ico" class="logo" />
-        <span class="title">
-            <span class="grbl">GRBL</span><span class="brasil">BRASIL</span>
-        </span>
+        <img src="/assets/logo-grbl.png" class="logo" alt="Logo GRBL BRASIL"/>
     </div>
-    <app-search-bar (search)="$event"/>
-    <app-button [buttonName]="'Login'"/>
+    <app-search-bar (search)="onSearch($event)"/>
+    <app-button [buttonName]="'Login'"></app-button>
 </header>
-<app-navigation-bar
-    [navItems]="[
-        { id: 1 , label: 'Sobre', link: '/sobre' },
-        { id: 2 , label: 'Eletronicos', link: '/app-products' },
-        { id: 3 , label: 'Máquinas', link: '/app-products' },
-        { id: 4 , label: 'Acessórios', link: '/app-products' },
-        { id: 5 , label: 'Contato', link: '/contato' }
-    ]"
-/>

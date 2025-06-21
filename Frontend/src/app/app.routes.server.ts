@@ -11,7 +11,7 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Server
   },
   {
-    path: 'product-page/:id',
+    path: 'product-page',
     renderMode: RenderMode.Server
   },
   {
