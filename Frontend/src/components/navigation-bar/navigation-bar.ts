@@ -1,12 +1,23 @@
-import { Component, input } from '@angular/core';
+import { NavigationItem } from './navigation-bar.type';
+import { Component, Input } from '@angular/core';
+import { Button } from "../button/button";
 
 @Component({
   selector: 'app-navigation-bar',
-  imports: [],
+  standalone: true,
+  imports: [Button],
   templateUrl: './navigation-bar.html',
   styleUrl: './navigation-bar.scss'
 })
 
 export class NavigationBar {
-  navItems = input([{id:1, label:"default", link:"default"}]);
+  @Input() parameters!: NavigationItem[];
+  menuOpen = false;
+
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
+  closeMenu() {
+    this.menuOpen = false;
+  }
 }

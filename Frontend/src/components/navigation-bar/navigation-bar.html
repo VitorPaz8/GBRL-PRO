@@ -1,5 +1,28 @@
-<nav class="navigation-bar">
-    @for (item of navItems(); track item.id) {
-        <button (click)="item.link">{{item.label}}</button>
-    }
+<div class="menu-toggle">
+  <button class="button-toggle" (click)="toggleMenu()">☰</button>
+
+  @if (menuOpen) {
+    <img
+      src="/assets/logo-grbl.png"
+      class="logo slide-in"
+      alt="Logo GRBL BRASIL"
+      (click)="closeMenu()"
+    />
+  }
+</div>
+
+@if (menuOpen) {
+  <div class="menu-backdrop" (click)="closeMenu()"></div>
+}
+
+<nav class="navigation-bar" [class.open]="menuOpen">
+  @for (item of parameters; track item.id) {
+    <app-button
+      [parameters]="{
+        route: item.link,
+        name: item.label,
+        variant: 'navigation-bar-button'
+      }"
+    ></app-button>
+  }
 </nav>

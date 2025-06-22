@@ -3,11 +3,12 @@ import { ProductDTO } from '../../dtos/productsDTO'
 
 @Component({
   selector: 'app-card-product',
+  standalone: true,
   imports: [],
   templateUrl: './card-product.html',
   styleUrl: './card-product.scss'
 })
 
 export class CardProduct{
-  @Input({ required: true }) product!: ProductDTO;
+  @Input() product!: ProductDTO;
 }

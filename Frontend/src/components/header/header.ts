@@ -4,6 +4,7 @@ import { SearchBar } from '../search-bar/search-bar';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   imports: [Button, SearchBar],
   templateUrl: './header.html',
   styleUrl: './header.scss'

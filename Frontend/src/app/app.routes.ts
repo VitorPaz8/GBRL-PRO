@@ -1,52 +1,59 @@
+// app.routes.ts
+
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  // Rotas com layout padrão (header, footer, etc.)
   {
     path: '',
-    redirectTo: 'produto',
-    pathMatch: 'full'
+    loadComponent: () => import('./pages/public/products/products').then(m => m.Products),
+    title: 'Início'
   },
   {
-    path: '',
-    loadComponent: () => import('./pages/public/products/products').then(m => m.Products)
+    path: 'inicio',
+    loadComponent: () => import('./pages/public/products/products').then(m => m.Products),
+    title: 'Início'
   },
   {
     path: 'produto',
-    loadComponent: () => import('./pages/public/products/products').then(m => m.Products)
+    loadComponent: () => import('./pages/public/product-page/product-page').then(m => m.ProductPage),
+    title: 'Produto'
   },
   {
-    path: 'product-page',
-    loadComponent: () => import('./pages/public/product-page/product-page').then(m => m.ProductPage)
-  },
-      {
     path: 'login',
-    loadComponent: () => import('./pages/public/login/login').then(m => m.Login)
+    loadComponent: () => import('./pages/public/login/login').then(m => m.Login),
+    title: 'Login'
   },
   {
-    path: 'first-login',
-    loadComponent: () => import('./pages/public/first-login/first-login').then(m => m.FirstLogin)
+    path: 'primeiro-acesso',
+    loadComponent: () => import('./pages/public/first-login/first-login').then(m => m.FirstLogin),
+    title: 'Primeiro Acesso'
   },
-  // Rotas privadas com guard
+
+  // Grupo privado com rota guard (se tiver auth)
   {
-    path: 'dashboard',
-    loadComponent: () => import('./pages/private/dashboard/dashboard').then(m => m.Dashboard),
-    // canActivate: [authGuard]
+    path: 'app',
+    children: [
+      {
+        path: 'dashboard',
+        loadComponent: () => import('./pages/private/dashboard/dashboard').then(m => m.Dashboard),
+        title: 'Dashboard'
+      },
+      {
+        path: 'carrinho',
+        loadComponent: () => import('./pages/private/carrinho/carrinho').then(m => m.Carrinho),
+        title: 'Carrinho'
+      },
+      {
+        path: 'pagamento',
+        loadComponent: () => import('./pages/private/pagamento/pagamento').then(m => m.Pagamento),
+        title: 'Pagamento'
+      }
+    ]
   },
+
+  // Fallback
   {
-    path: 'carrinho',
-    loadComponent: () => import('./pages/private/carrinho/carrinho').then(m => m.Carrinho),
-    // canActivate: [authGuard]
-  },
-  {
-    path: 'pagamento',
-    loadComponent: () => import('./pages/private/pagamento/pagamento').then(m => m.Pagamento),
-    // canActivate: [authGuard]
-  },
-  
-  // Rota 404
-  {
-      path: '',
-      loadComponent: () => import('./pages/public/products/products').then(m => m.Products)
-    }
+    path: '**',
+    redirectTo: '/inicio'
+  }
 ];

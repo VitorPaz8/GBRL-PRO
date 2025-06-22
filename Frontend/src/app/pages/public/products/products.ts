@@ -8,7 +8,8 @@ import { NavigationBar } from "../../../../components/navigation-bar/navigation-
 
 @Component({
   selector: 'app-products',
-  imports: [CardProduct, Header, Footer, NavigationBar],
+  standalone: true ,
+  imports: [Header, Footer, NavigationBar, CardProduct],
   templateUrl: './products.html',
   styleUrl: './products.scss'
 })
@@ -16,12 +17,11 @@ import { NavigationBar } from "../../../../components/navigation-bar/navigation-
 export class Products {
   products: ProductDTO[] = [];
 
-  constructor(private productService: ProductService){}
+  constructor(private productService: ProductService) {}
 
-  ngOnInit(): void {
-    this.productService.listarProdutos().subscribe({
-      next: (data) => this.products = data,
-      error: (err) => console.error('Erro ao buscar produtos:', err)
+  ngOnInit() {
+    this.productService.listarProdutosMock().subscribe((data) => {
+      this.products = data;
     });
   }
 }

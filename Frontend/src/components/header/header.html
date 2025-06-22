@@ -3,5 +3,5 @@
         <img src="/assets/logo-grbl.png" class="logo" alt="Logo GRBL BRASIL"/>
     </div>
     <app-search-bar (search)="onSearch($event)"/>
-    <app-button [buttonName]="'Login'"></app-button>
+    <app-button [parameters]="{ route: '/login', name: 'Login', variant: 'common'}"></app-button>
 </header>
