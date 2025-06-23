@@ -25,7 +25,6 @@ auth-service/.env
 # GATEWAY - Node.js
 gateway/node_modules/
 gateway/dist/
-gateway/.env
 
 # COMUM
 *.log
