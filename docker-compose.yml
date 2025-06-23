@@ -4,7 +4,7 @@ services:
       context: ./frontend
       dockerfile: dockerfile
     ports:
-      - "4200:4000"
+      - "4000:4000"
     restart: unless-stopped
     environment:
       - NODE_ENV=production
@@ -14,20 +14,16 @@ services:
   gateway:
     build:
       context: ./gateway
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "30:30"
     networks:
       - app-network
     depends_on:
-      - auth-service
-      - user-service
-      - product-service
-      - cart-service
-      - order-service
-      - inventory-service
-      - payment-service
+      - authservice
+      - frontend
 
-  auth-service:
+  authservice:
     build:
       context: ./authservice
     ports:
@@ -40,7 +36,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
       - RABBITMQ_HOST=rabbitmq
 
-  admin-dashboard:
+  admindashboard:
     build:
       context: ./backend/admindashboard
     ports:
@@ -52,7 +48,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
   
-  cart-service:
+  cartservice:
     build:
       context: ./backend/cartservice
     ports:
@@ -64,7 +60,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
 
-  inventory-service:
+  inventoryservice:
     build:
       context: ./backend/inventoryservice
     ports:
@@ -76,7 +72,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
     
-  order-service:
+  orderservice:
     build:
       context: ./backend/orderservice
     ports:
@@ -89,7 +85,7 @@ services:
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
       - RABBITMQ_HOST=rabbitmq
 
-  payment-service:
+  paymentservice:
     build:
       context: ./backend/paymentservice
     ports:
@@ -101,7 +97,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
     
-  product-service:
+  productservice:
     build:
       context: ./backend/productservice
     ports:
@@ -113,7 +109,7 @@ services:
       - SPRING_DATASOURCE_USERNAME=${POSTGRES_USER}
       - SPRING_DATASOURCE_PASSWORD=${POSTGRES_PASSWORD}
 
-  user-service:
+  userservice:
     build:
       context: ./backend/userservice
     ports:
