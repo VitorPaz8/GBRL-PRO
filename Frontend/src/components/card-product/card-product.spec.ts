@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DefaultLayout } from './default-layout';
+import { CardProduct } from './card-product';
 
-describe('DefaultLayout', () => {
-  let component: DefaultLayout;
-  let fixture: ComponentFixture<DefaultLayout>;
+describe('CardProduct', () => {
+  let component: CardProduct;
+  let fixture: ComponentFixture<CardProduct>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DefaultLayout]
+      imports: [CardProduct]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DefaultLayout);
+    fixture = TestBed.createComponent(CardProduct);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,1 +1,19 @@
-<p>product-page works!</p>
+<app-header></app-header>
+
+<app-navigation-bar
+    [parameters]="[
+        { id: 1 , label: 'Sobre', link: '/sobre' },
+        { id: 2 , label: 'Eletronicos', link: '/inicio' },
+        { id: 3 , label: 'Máquinas', link: '/app-products' },
+        { id: 4 , label: 'Acessórios', link: '/app-products' },
+        { id: 5 , label: 'Contato', link: '/contato' }
+    ]"
+/>
+
+<div class="grid">
+    <div class="product-grid">
+        <app-card-product [product]="product"></app-card-product>
+    </div>
+</div>
+
+<app-footer></app-footer>

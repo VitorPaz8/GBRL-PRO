@@ -1,1 +1,17 @@
-<button (click)="goToPage()">{{buttonName}}</button>
+@if (parameters.route) {
+  <a
+    [routerLink]="parameters.route"
+    [ngClass]="['app-button', 'app-button--' + (parameters.variant || 'primary')]"
+    [class.disabled]="parameters.disabled"
+  >
+    {{ parameters.name }}
+  </a>
+} @else {
+  <button
+    (click)="handleClick()"
+    [disabled]="parameters.disabled"
+    [ngClass]="['app-button', 'app-button--' + (parameters.variant || 'primary')]"
+  >
+    {{ parameters.name }}
+  </button>
+}

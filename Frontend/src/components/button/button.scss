@@ -1,20 +1,63 @@
-button {
-    align-items: center;
-    justify-content: center;
-    background-color:  #002147;
-    color: white;
-    border: 1px solid #FFD700;
-    border-radius: 5px;
-    font-weight: 500;
+.app-button {
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
 
-    cursor: pointer;
-    
-    transition: all 0.3s ease;
-    padding: 0.6rem 1.2rem;
+  &--common {
+    border: 2px solid #f4d600;
+    background-color: #0c1e3b;
+    border-radius: 4px;
+    color: white;
 
     &:hover {
-        background-color:  #FFD700;
-        color:  #002147;
-        border-color: #FFD700;
+      background-color: #f4d600;
+      color: #0c1e3b;
     }
+  }
+
+  &--navigation-bar-button {
+    background-color: transparent;
+    color: white;
+
+    &:hover {
+      background-color: #f4d600;
+      color: #000080;
+    }
+    .active {
+      background-color: #0c1e3b;
+    }
+  }
+
+  &--danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+
+    &:hover {
+      background-color: #dc3545;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    background-color: #ccc;
+    color: #666;
+    border-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 568px) {
+  .app-button {
+    &--navigation-bar-button {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.75rem 1rem;
+    }
+  }
 }
