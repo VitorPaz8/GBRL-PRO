@@ -1,15 +1,21 @@
+<app-header></app-header>
+
+<app-navigation-bar
+    [parameters]="[
+        { id: 1 , label: 'Sobre', link: '/sobre' },
+        { id: 2 , label: 'Eletronicos', link: '/produto' },
+        { id: 3 , label: 'Máquinas', link: '/first-login' },
+        { id: 4 , label: 'Acessórios', link: '/product-page' },
+        { id: 5 , label: 'Contato', link: '/contato' }
+    ]"
+/>
+
 <div class="grid">
     <div class="product-grid">
-        @for (item of productsToDisplay; track item.id) {
-            <div class="product">
-                <h3>{{item.name}}</h3>
-                <li>{{item.image}}</li>
-                <li>{{item.description}}</li>
-                <div>
-                    <li>{{item.price}}</li>
-                    <li>{{item.quantityAvailable}}</li>
-                </div>
-            </div>
+        @for (product of products; track product.id) {
+            <app-card-product [product]="product"></app-card-product>
         }
     </div>
 </div>
+
+<app-footer></app-footer>

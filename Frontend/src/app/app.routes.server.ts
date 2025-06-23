@@ -1,17 +1,18 @@
+// app.routes.server.ts
 import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
-  // Páginas públicas - SSR para melhor SEO
+  // Páginas públicas com SSR (ótimo para SEO)
   {
     path: '',
     renderMode: RenderMode.Server
   },
   {
-    path: 'products',
+    path: 'inicio',
     renderMode: RenderMode.Server
   },
   {
-    path: 'product-page/:id',
+    path: 'produto', // matches /produto/:id
     renderMode: RenderMode.Server
   },
   {
@@ -19,56 +20,44 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Server
   },
   {
-    path: 'first-login',
+    path: 'primeiro-acesso',
     renderMode: RenderMode.Server
   },
-  
-  // Páginas privadas - CSR para melhor interatividade
+
+  // Páginas privadas dentro de 'app/' com CSR (não renderiza no servidor)
   {
-    path: 'dashboard',
+    path: 'app/dashboard',
     renderMode: RenderMode.Client
   },
   {
-    path: 'carrinho',
+    path: 'app/carrinho',
     renderMode: RenderMode.Client
   },
   {
-    path: 'pagamento',
+    path: 'app/pagamento',
     renderMode: RenderMode.Client
   },
 
-  // Rotas de API ou dados dinâmicos - Prerendering não é adequado
+  // APIs ou rotas dinâmicas fora do Angular (SSR seguro)
   {
     path: 'api/**',
     renderMode: RenderMode.Server
   },
 
-  // Rotas com parâmetros dinâmicos
-  {
-    path: 'product/**',
-    renderMode: RenderMode.Server
-  },
-
-  // Fallback para rotas não especificadas - SSR por padrão
+  // Fallback para tudo que não foi especificado explicitamente
   {
     path: '**',
     renderMode: RenderMode.Server
   }
 ];
 
-// Configurações adicionais para otimização
 export const serverConfig = {
-  // Timeout para renderização no servidor (em ms)
   timeout: 10000,
-  
-  // Configurações de cache para diferentes tipos de página
   cacheConfig: {
-    // Páginas públicas podem ser cacheadas por mais tempo
     public: {
       maxAge: 3600, // 1 hora
       staleWhileRevalidate: 86400 // 24 horas
     },
-    // Páginas privadas não devem ser cacheadas
     private: {
       maxAge: 0,
       staleWhileRevalidate: 0

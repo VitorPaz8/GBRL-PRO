@@ -1,0 +1,72 @@
+.navigation-bar {
+  width: 100%;
+  background-color: #000080;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transition: left 0.3s ease;
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+
+  .button-toggle {
+    background: none;
+    border: none;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .logo {
+    height: 50px;
+    width: auto;
+    transform: translateX(-35px);
+    animation: slideInLogo 0.3s ease-out forwards;
+  }
+}
+
+@media (max-width: 562px) {
+  .menu-toggle {
+    display: flex;
+  }
+  .menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+  .navigation-bar {
+    position: fixed;
+    flex-direction: column;
+    align-items: stretch;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    padding: 2rem 1rem;
+    z-index: 999;
+    gap: 1rem;
+
+    &.open {
+      left: 0;
+    }
+  }
+}
+
+@keyframes slideInLogo {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
