@@ -8,10 +8,10 @@
 		<version>3.5.15</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gbrl</groupId>
-	<artifactId>productservice</artifactId>
+	<groupId>com.userservice</groupId>
+	<artifactId>userservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>productservice</name>
+	<name>userservice</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -131,4 +131,5 @@
 			</plugin>
 		</plugins>
 	</build>
+
 </project>

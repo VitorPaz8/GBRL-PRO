@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.gbrl</groupId>
-	<artifactId>productservice</artifactId>
+	<artifactId>cartservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>productservice</name>
+	<name>cartservice</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
